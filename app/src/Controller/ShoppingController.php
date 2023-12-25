@@ -25,7 +25,6 @@ class ShoppingController extends Controller
 
     public function edit(array $params)
     {
-        var_dump($params);
-        exit;
+        Debug::output($params);
     }
 }
