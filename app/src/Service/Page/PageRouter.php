@@ -27,9 +27,9 @@ class PageRouter
         return null;
     }
     
-    public function matches(string $routePath): bool
+    public function matches(string $pagePathParams): bool
     {
-        $pattern = preg_replace('/\//', '\/', $routePath);
+        $pattern = preg_replace('/\//', '\/', $pagePathParams);
         $pattern = preg_replace('/{.+?}/', '.+', $pattern);
         return (bool)preg_match('/^'.$pattern.'$/', $this->url->path());
     }
@@ -39,11 +39,11 @@ class PageRouter
         $result = [];
 
         $urlPathParams = explode('/', $this->url->path());
-        $routePathParams = explode('/', $routePath);
-        for ($i = 0; $i < count($routePathParams); $i++) {
-            if (preg_match('/{.+?}/', $routePathParams[$i])) {
+        $pagePathParams = explode('/', $routePath);
+        for ($i = 0; $i < count($pagePathParams); $i++) {
+            if (preg_match('/{.+?}/', $pagePathParams[$i])) {
                 // パスの{}で囲まれている部分のみ取り出してキーにする
-                $key = strtr($routePathParams[$i], [
+                $key = strtr($pagePathParams[$i], [
                     '{' => '', 
                     '}' => ''
                 ]);
