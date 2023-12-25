@@ -4,11 +4,13 @@ require_once(__DIR__.'/../vendor/autoload.php');
 
 use App\Service\Unit\Url;
 use App\Service\Page\PageRouter;
+use App\Service\Page\Setting;
 
 try {
     // コントローラーを動かす
     $url = Url::createOwnUrl();
-    $pageRouter = new PageRouter($url);
+    $pageSetting = new Setting();
+    $pageRouter = new PageRouter($url, $pageSetting);
     if (!$page = $pageRouter->find()) {
         echo '404 not found';
         exit;

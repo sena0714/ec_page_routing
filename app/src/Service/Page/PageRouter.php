@@ -9,9 +9,9 @@ class PageRouter
 {
     private $setting;
     private $url;
-    public function __construct(Url $url)
+    public function __construct(Url $url, Setting $setting)
     {
-        $this->setting = new Setting();
+        $this->setting = $setting;
         $this->url = $url;
     }
 
