@@ -1,0 +1,23 @@
+version: '3.7'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 8009:80
+      - 4439:443
+    volumes:
+      - ./app:/var/www/html/app
+      - ./docker/config/apache/httpd.conf:/etc/httpd/conf/httpd.conf
+      - ./docker/config/apache/ssl.conf:/etc/httpd/conf.d/ssl.conf
+      - ./docker/config/php/php.ini:/etc/php.ini
+      - ./docker/config/centos/centos.repo:/etc/yum.repos.d/centos.repo
+    networks:
+      - backend
+    privileged: true
