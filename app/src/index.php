@@ -2,9 +2,9 @@
 ini_set('display_errors', 'On');
 require_once(__DIR__.'/../vendor/autoload.php');
 
-use App\Service\Unit\Url;
-use App\Service\Page\PageRouter;
-use App\Service\Page\Setting;
+use App\Feature\Unit\Url;
+use App\Feature\Page\PageRouter;
+use App\Feature\Page\Setting;
 
 try {
     // コントローラーを動かす

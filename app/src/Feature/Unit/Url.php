@@ -1,7 +1,7 @@
 <?php
-namespace App\Service\Unit;
+namespace App\Feature\Unit;
 
-use App\Service\Unit\Number;
+use App\Service\Feature\Number;
 
 class Url
 {

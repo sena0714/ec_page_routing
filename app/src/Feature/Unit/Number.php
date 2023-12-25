@@ -1,5 +1,5 @@
 <?php
-namespace App\Service\Unit;
+namespace App\Feature\Unit;
 
 class Number
 {

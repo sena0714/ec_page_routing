@@ -1,7 +1,7 @@
 <?php
-namespace App\Service\Page;
+namespace App\Feature\Page;
 
-use App\Service\Unit\Url;
+use App\Feature\Unit\Url;
 
 class PageRouter
 {

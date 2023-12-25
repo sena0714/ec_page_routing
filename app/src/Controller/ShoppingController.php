@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Service\Unit\Debug;
+use App\Feature\Unit\Debug;
 use App\UseCase\Cart\IndexRequest;
 use App\UseCase\Cart\IndexUseCase;
 

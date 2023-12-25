@@ -1,5 +1,5 @@
 <?php
-namespace App\Service\Page;
+namespace App\Feature\Page;
 
 use App\Controller\ShoppingController;
 
