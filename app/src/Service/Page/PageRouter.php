@@ -2,17 +2,15 @@
 namespace App\Service\Page;
 
 use App\Service\Unit\Url;
-use App\Service\Page\Page;
-use App\Service\Page\Setting;
 
 class PageRouter
 {
-    private $setting;
     private $url;
+    private $setting;
     public function __construct(Url $url, Setting $setting)
     {
-        $this->setting = $setting;
         $this->url = $url;
+        $this->setting = $setting;
     }
 
     public function find(): ?Page

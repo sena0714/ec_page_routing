@@ -12,8 +12,7 @@ try {
     $pageSetting = new Setting();
     $pageRouter = new PageRouter($url, $pageSetting);
     if (!$page = $pageRouter->find()) {
-        echo '404 not found';
-        exit;
+        throw new Exception('404 Not Found');
     }
 
     $page->controller()->{$page->method()}($page->params());
