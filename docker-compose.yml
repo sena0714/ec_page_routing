@@ -10,8 +10,8 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile
     ports:
-      - 8009:80
-      - 4439:443
+      - 80:80
+      - 443:443
     volumes:
       - ./app:/var/www/html/app
       - ./docker/config/apache/httpd.conf:/etc/httpd/conf/httpd.conf
