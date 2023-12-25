@@ -20,11 +20,11 @@ class ShoppingController extends Controller
         
         $res = $this->indexUseCase->execute($req);
         
-        Debug::output($res->paymentPrice());
+        Debug::outputOnWeb($res->paymentPrice());
     }
 
     public function edit(array $params)
     {
-        Debug::output($params);
+        Debug::outputOnWeb($params);
     }
 }
