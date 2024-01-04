@@ -25,14 +25,14 @@ class PageRouter
         return null;
     }
     
-    public function matches(string $pagePathParams): bool
+    private function matches(string $pagePathParams): bool
     {
         $pattern = preg_replace('/\//', '\/', $pagePathParams);
         $pattern = preg_replace('/{.+?}/', '.+', $pattern);
         return (bool)preg_match('/^'.$pattern.'$/', $this->url->path());
     }
 
-    public function parseParams(string $routePath): array
+    private function parseParams(string $routePath): array
     {
         $result = [];
 
